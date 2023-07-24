@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const badgeMaker = require('badge-maker')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -30,6 +31,12 @@ const questions = [
     },
     {
         type: 'input',
+        message: 'If your project has a lot of features, list them here. Begin with a \'-\' to add an item, then add two spaces before the next',
+        default: '',
+        name: 'features',
+    },
+    {
+        type: 'input',
         message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
         default: '',
         name: 'installation',
@@ -44,7 +51,13 @@ const questions = [
         type: 'input',
         message: 'Please provide the file path to a screenshot or video of your project.',
         default: '',
-        name: 'image',
+        name: 'filePath',
+    },
+    {
+        type: 'input',
+        message: 'Please provide alt text for your image / video file.',
+        default: '',
+        name: 'altText',
     },
     {
         type: 'input',
@@ -63,7 +76,7 @@ const questions = [
         type: 'input',
         message: 'If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you\'d prefer.',
         default: '',
-        name: 'contributing',
+        name: 'contribute',
     },
     {
         type: 'input',
@@ -77,6 +90,7 @@ inquirer
     .prompt(questions)
     .then((answers) => {
         // What to do with answers
+        // Need a variable 'licenseInfo' that returns licence information based on user selection
     })
     .catch((error) => {
         console.log('Something went wrong.')
