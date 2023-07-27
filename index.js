@@ -29,7 +29,7 @@ const questions = [
         name: 'description',
     },
     {
-        type: 'input',
+        type: 'editor',
         message: 'List the features of your project.',
         default: '',
         name: 'features',

@@ -1,10 +1,11 @@
-# ${title}
+
+# Test Project
 
 ## Badges
-![${license}](badge)
+![GNU AGPLv3](https://img.shields.io/badge/license-GNU AGPLv3-purple)
 
 ## Description
-${description}
+abc123
 
 ## Table of Contents
 - [Features](#features)
@@ -17,31 +18,27 @@ ${description}
 - [Questions](#questions)
 
 ## Features
-${features}
+1, 2, 3
 
 ## Installation
-${installation}
+djflsjdkl
 
 ## Usage
-${usage}
+sdfskljkl
 
-![${altText}](${filePath})
+![Alt Text](./assets/bd-draft-kt.jpg)
 
 ## License
-All assets and code are under ${license} unless specified otherwise.
+All assets and code are under GNU AGPLv3 unless specified otherwise.
 
 ## Contributing
-${contribute}
+sjdkfsjdkfls
 
 ## Tests
-${tests}
+fjsdfjksl
 
 ## Credits
-${credits}
+afjskdfjsl
 
 ## Questions
-Any questions? Visit my GitHub profile at [${gitHub}](${gitHub}) or email me at [${email}](${email}).
-
-
-
-
+Any questions? Visit my GitHub profile at [https://github.com/katyjmt](https://github.com/katyjmt) or email me at [katyjmt@gmail.com](katyjmt@gmail.com).
