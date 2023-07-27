@@ -21,7 +21,9 @@ A command-line application to generate a README.md file. The application prompts
 Runs on the command-line, prompts the user with questions, auto-generates README.md file once questions are completed.
 
 ## Installation
-Download the files from the repository, then navigate via the command line to the local folder in which they're stored. Once in the folder, type 'node index.js' to run the application.
+Download the files from the repository, then navigate via the command line to the local folder in which they're stored. Once in the folder, type 'npm i' to install the packages needed for the application, then type 'node index.js' to run the application.
+
+NOTE: This application requires node.js and npm to be installed on the user's computer as a prerequisite for use.
 
 ## Usage
 Once your project is ready to be shared, run the application to easily create a README.md file within the folder you are in. Then move the file to your project respository to ensure others can easily learn key information about your project.
