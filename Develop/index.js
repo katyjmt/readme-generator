@@ -1,9 +1,8 @@
-// TODO: Include packages needed for this application
+// Add packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-// const badgeMaker = require('badge-maker') ---> Don't think I need this with URL version
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -87,15 +86,7 @@ const questions = [
 ];
 
 
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     fs.writeFile('README.md', readMeContent, (err) =>  
-//         err ? console.error(err) : console.log('File created!'))
-//         :   console.log('Something\'s gone wrong.')
-// }
-
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     inquirer
     .prompt(questions)
@@ -153,9 +144,6 @@ ${answers.credits}
 Any questions? Visit my GitHub profile at [${gitHub}](${gitHub}) or email me at [${answers.email}](${answers.email}).`;
         
         console.log(readMeContent);
-
-        // Log answers to check they have been recorded correctly
-        // console.log(`${username}, ${email}, ${title}, ${description}, ${features}, ${installation}, ${usage}, ${filePath}, ${altText}, ${credits}, ${license}, ${contribute}, ${tests}`);
 
         // Write README File
         fs.writeFile('README.md',readMeContent, (err) =>  
