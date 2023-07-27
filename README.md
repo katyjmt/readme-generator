@@ -1,19 +1,20 @@
 # ${title}
 
 ## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+![${license}](badge)
 
 ## Description
 ${description}
 
 ## Table of Contents
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Credits](#credits)
+- [Questions](#questions)
 
 ## Features
 ${features}
@@ -27,7 +28,7 @@ ${usage}
 ![${altText}](${filePath})
 
 ## License
-${licenseInfo}
+All assets and code are under ${license} unless specified otherwise.
 
 ## Contributing
 ${contribute}
@@ -39,6 +40,7 @@ ${tests}
 ${credits}
 
 ## Questions
+Any questions? Visit my GitHub profile at [${gitHub}](${gitHub}) or email me at [${email}](${email}).
 
 
 

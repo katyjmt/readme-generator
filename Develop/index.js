@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const badgeMaker = require('badge-maker')
+// const badgeMaker = require('badge-maker') ---> Don't think I need this with URL version
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -13,7 +13,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What is your email address? (So people can reach you if they have questions about your application.)',
+        message: 'What is your email address?',
         default: '',
         name: 'email',
     },
@@ -25,25 +25,25 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:\n- What was your motivation?\nWhy did you build this project?\nWhat problem does it solve?\nWhat did you learn?',
+        message: 'Provide a short description explaining the what, why, and how of your project.\n- What was your motivation?\n- Why did you build this project?\n- What problem does it solve?\n- What did you learn?\n',
         default: '',
         name: 'description',
     },
     {
-        type: 'input',
-        message: 'If your project has a lot of features, list them here. Begin with a \'-\' to add an item, then add two spaces before the next',
+        type: 'editor',
+        message: 'List the features of your project.',
         default: '',
         name: 'features',
     },
     {
         type: 'input',
-        message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
+        message: 'What are the steps required to install your project?',
         default: '',
         name: 'installation',
     },
     {
         type: 'input',
-        message: 'Provide instructions and examples for use.',
+        message: 'Provide instructions and examples for how your project can be used.',
         default: '',
         name: 'usage',
     },
@@ -61,7 +61,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'List your collaborators, if any, with links to their GitHub profiles.\nIf you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.\nIf you followed tutorials, include links to those here as well.',
+        message: 'List your collaborators, with links to their GitHub profiles, as well as any third-party assets and tutorials used.',
         default: '',
         name: 'credits',
     },
@@ -74,7 +74,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you\'d prefer.',
+        message: 'Please provide guidelines for how other developers may contribute to your project (if you wish to allow this).',
         default: '',
         name: 'contribute',
     },
@@ -86,21 +86,85 @@ const questions = [
     },
 ];
 
-inquirer
+
+
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {
+//     fs.writeFile('README.md', readMeContent, (err) =>  
+//         err ? console.error(err) : console.log('File created!'))
+//         :   console.log('Something\'s gone wrong.')
+// }
+
+// TODO: Create a function to initialize app
+function init() {
+    inquirer
     .prompt(questions)
     .then((answers) => {
-        // What to do with answers
-        // Need a variable 'licenseInfo' that returns licence information based on user selection
+        // Variable for GitHub URL
+        const gitHub = `https://github.com/${answers.username}`;
+        console.log(gitHub);
+        // Create badge for license using badge maker
+        const badge = `https://img.shields.io/badge/license-${answers.license}-purple`;
+        console.log(badge);
+        // Create variable to hold README content
+        let readMeContent = `
+# ${answers.title}
+
+## Badges
+![${answers.license}](${badge})
+
+## Description
+${answers.description}
+
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Credits](#credits)
+- [Questions](#questions)
+
+## Features
+${answers.features}
+
+## Installation
+${answers.installation}
+
+## Usage
+${answers.usage}
+
+![${answers.altText}](${answers.filePath})
+
+## License
+All assets and code are under ${answers.license} unless specified otherwise.
+
+## Contributing
+${answers.contribute}
+
+## Tests
+${answers.tests}
+
+## Credits
+${answers.credits}
+
+## Questions
+Any questions? Visit my GitHub profile at [${gitHub}](${gitHub}) or email me at [${answers.email}](${answers.email}).`;
+        
+        console.log(readMeContent);
+
+        // Log answers to check they have been recorded correctly
+        // console.log(`${username}, ${email}, ${title}, ${description}, ${features}, ${installation}, ${usage}, ${filePath}, ${altText}, ${credits}, ${license}, ${contribute}, ${tests}`);
+
+        // Write README File
+        fs.writeFile('README.md',readMeContent, (err) =>  
+        err ? console.error(err) : console.log('File created!'));
     })
     .catch((error) => {
         console.log('Something went wrong.')
     })
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
+}
 
 // Function call to initialize app
 init();
