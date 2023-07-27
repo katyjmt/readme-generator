@@ -172,8 +172,7 @@ ${answers.credits}
 
 ## Questions
 Any questions? Visit my GitHub profile at [${gitHub}](${gitHub}) or email me at [${answers.email}](${answers.email}).`;
-        
-        console.log(readMeContent);
+
 
         // Write README File
         fs.writeFile('README.md',readMeContent, (err) =>  
