@@ -94,8 +94,38 @@ function init() {
         // Variable for GitHub URL
         const gitHub = `https://github.com/${answers.username}`;
         console.log(gitHub);
+        // Variable to translate License response to format required by shields.io
+        let licenseResponse;
+        switch(answers.license) {
+            case "MIT License":
+                licenseResponse = "MIT_License";
+                break;
+            case "GNU GPLv3":
+                licenseResponse = "GNU_GPLv3";
+                break;
+            case "GNU AGPLv3":
+                licenseResponse = "GNU_AGPLv3";
+                break;
+            case "GNU LGPLv3":
+                licenseResponse = "GNU_LGPLv3";
+                break;
+            case "Mozilla Public License 2.0":
+                licenseResponse = "Mozilla_Public_License_2.0";
+                break;
+            case "Apache License 2.0":
+                licenseResponse = "Apache_License_2.0";
+                break;
+            case "Boost Software License 1.0":
+                licenseResponse = "Boost_Software_License_1.0";
+                break;
+            case "The Unlicense":
+                licenseResponse = "The_Unlicense";
+                break;
+            default:
+                licenseResponse = "None";
+        }
         // Create badge for license using badge maker
-        const badge = `https://img.shields.io/badge/license-${answers.license}-purple`;
+        const badge = `https://img.shields.io/badge/license-${licenseResponse}-purple`;
         console.log(badge);
         // Create variable to hold README content
         let readMeContent = `
