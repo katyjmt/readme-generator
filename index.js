@@ -93,7 +93,6 @@ function init() {
     .then((answers) => {
         // Variable for GitHub URL
         const gitHub = `https://github.com/${answers.username}`;
-        console.log(gitHub);
         // Variable to translate License response to format required by shields.io
         let licenseResponse;
         switch(answers.license) {
@@ -126,7 +125,6 @@ function init() {
         }
         // Create badge for license using badge maker
         const badge = `https://img.shields.io/badge/license-${licenseResponse}-purple`;
-        console.log(badge);
         // Create variable to hold README content
         let readMeContent = `
 # ${answers.title}
