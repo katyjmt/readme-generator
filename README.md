@@ -18,7 +18,7 @@ A command-line application to generate a README.md file. The application prompts
 - [Credits](#credits)
 - [Questions](#questions)
 
-## Video Walkthrough {#video-walkthrough}
+## Video Walkthrough
 [Video Link](https://drive.google.com/file/d/1wa0p8udWO7QJkcUsbczxyMGMxT7vX_02/view)
 
 ## Features
