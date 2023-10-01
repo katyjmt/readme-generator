@@ -8,6 +8,7 @@
 A command-line application to generate a README.md file. The application prompts the user with questions about their project, then uses their responses to populate the file. 
 
 ## Table of Contents
+- [Video Walkthrough](#video-walkthrough)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -16,6 +17,9 @@ A command-line application to generate a README.md file. The application prompts
 - [Tests](#tests)
 - [Credits](#credits)
 - [Questions](#questions)
+
+## Video Walkthrough {#video-walkthrough}
+[Video Link](https://drive.google.com/file/d/1wa0p8udWO7QJkcUsbczxyMGMxT7vX_02/view)
 
 ## Features
 Runs on the command-line, prompts the user with questions, auto-generates README.md file once questions are completed.
